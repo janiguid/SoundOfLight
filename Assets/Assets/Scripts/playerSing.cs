@@ -27,8 +27,17 @@ public class playerSing : playerMovement {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.Z) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
+        {
+            audio.Play();
+        }
 
-	}
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            audio.Stop();
+        }
+
+    }
 
     private void FixedUpdate()
     {
@@ -38,7 +47,6 @@ public class playerSing : playerMovement {
         //until it reaches the peak
         if (Input.GetKey(KeyCode.Z) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
         {
-            audio.Play();
             if (orb.range <= maxLightRadius)
                 orb.range += lightRangeIncrementor;
         }
