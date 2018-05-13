@@ -11,11 +11,12 @@ public class playerSing : playerMovement {
     public int minLightRadius;
     public float lightRangeIncrementor;
     public float lightRangeDecrementor;
-
+    public AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
         orb = GameObject.FindGameObjectWithTag("Orb").GetComponent<Light>();
+        audio = GetComponent<AudioSource>();
         maxLightRadius = 5;
         minLightRadius = 3;
         lightRangeDecrementor = .10f;
@@ -37,6 +38,7 @@ public class playerSing : playerMovement {
         //until it reaches the peak
         if (Input.GetKey(KeyCode.Z) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
         {
+            audio.Play();
             if (orb.range <= maxLightRadius)
                 orb.range += lightRangeIncrementor;
         }
