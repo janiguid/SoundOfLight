@@ -59,7 +59,8 @@ public class playerMovement : MonoBehaviour {
         //movementSpeed to affect the direction the player
         //goes to.
         xMove = Input.GetAxis("Horizontal");
-        rb2D.velocity = new Vector2(xMove*movementSpeed, rb2D.velocity.y);
+        rb2D.velocity = new Vector2(xMove * movementSpeed, rb2D.velocity.y);
+        
 
         determineDirection();
 
