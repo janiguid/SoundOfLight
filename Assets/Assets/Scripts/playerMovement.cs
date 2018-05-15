@@ -13,9 +13,9 @@ public class playerMovement : MonoBehaviour {
 
     //vertical movement
     [SerializeField]
-    private float jumpHeight, jumpMultiplier, lowJumpMultiplier, upwardJumpMultiplier;
+    private float jumpHeight;
     [SerializeField]
-    private bool jumping, isGrounded;
+    private bool jumpCall, jumping, isGrounded;
 
     //direction variables
     public bool isFacingRight;
@@ -35,15 +35,36 @@ public class playerMovement : MonoBehaviour {
 
 
         //setting movement variables
-        movementSpeed = 8;
-        jumpHeight = 7;
-        jumpMultiplier = 2.75f;
-        lowJumpMultiplier = 2;
-        upwardJumpMultiplier = 1.5f;
+        movementSpeed = 5;
+        jumpHeight =160;
+
 
         //direction variables
         isFacingRight = true;
 	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        float horizontalVelocity = Input.GetAxis("Horizontal");
+
+        if (horizontalVelocity != 0)
+        {
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
+
+        animator.SetFloat("xVel", horizontalVelocity);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        {
+            jumpCall = true;
+        }
+
+    }
 
     //The difference between Update and FixedUpdate
     //is that, unlike Update, FixedUpdate is not dependent on the 
@@ -65,22 +86,27 @@ public class playerMovement : MonoBehaviour {
         determineDirection();
 
         Debug.Log(rb2D.velocity.y);
-        //https://www.youtube.com/watch?v=7KiK0Aqtmzc
-        //essentially increases gravity on the way down
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+
+        if (jumpCall)
         {
-            rb2D.velocity = Vector2.up * jumpHeight * upwardJumpMultiplier;
-            isGrounded = false;
+            Jump();
         }
 
-        if (rb2D.velocity.y < 0)
-        {
-            rb2D.velocity += Vector2.up * Physics2D.gravity.y * (jumpMultiplier - 1) * Time.deltaTime;
-        }
-        else if (rb2D.velocity.y > 0 && !Input.GetKey(KeyCode.UpArrow))
-        {
-            rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-        }
+    }
+
+    public void Jump()
+    {
+        //https://www.youtube.com/watch?v=7KiK0Aqtmzc
+        //essentially increases gravity on the way down
+        Debug.Log("nani");
+
+        isGrounded = false;
+
+        rb2D.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+
+        jumpCall = false;
+
+
     }
 
     public void determineDirection()
@@ -107,25 +133,7 @@ public class playerMovement : MonoBehaviour {
         
     }
 
-    // Update is called once per frame
-    void Update () {
-        float horizontalVelocity = Input.GetAxis("Horizontal");
 
-        if(horizontalVelocity != 0)
-        {
-            animator.SetBool("Moving", true);
-        }
-        else
-        {
-            animator.SetBool("Moving", false);
-        }
 
-        animator.SetFloat("xVel", horizontalVelocity);
-        
-	}
-
-    public void testFunc() {
-
-    }
 
 }
