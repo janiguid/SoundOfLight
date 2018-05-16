@@ -10,7 +10,7 @@ public class playerJumpBuff : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb2D = GetComponent<Rigidbody2D>();
-        fallJumpMultiplier = 6f;
+        fallJumpMultiplier = 1.75f;
         lowFallJumpMultiplier = 2;
         upwardJumpMultiplier = 1.5f;
     }

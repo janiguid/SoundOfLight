@@ -170,7 +170,7 @@ Prefab:
     - target: {fileID: 50333793681244158, guid: 84ecfb53db712d24fb11e78dabfa48c3,
         type: 2}
       propertyPath: m_Mass
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84ecfb53db712d24fb11e78dabfa48c3, type: 2}
