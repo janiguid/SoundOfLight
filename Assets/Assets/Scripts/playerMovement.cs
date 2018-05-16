@@ -36,7 +36,7 @@ public class playerMovement : MonoBehaviour {
 
         //setting movement variables
         movementSpeed = 5;
-        jumpHeight =160;
+        jumpHeight =325;
 
 
         //direction variables
@@ -59,7 +59,7 @@ public class playerMovement : MonoBehaviour {
 
         animator.SetFloat("xVel", horizontalVelocity);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKey(KeyCode.UpArrow) && isGrounded)
         {
             jumpCall = true;
         }
