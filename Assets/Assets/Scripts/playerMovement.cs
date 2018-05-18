@@ -16,7 +16,8 @@ public class playerMovement : MonoBehaviour {
     [SerializeField]
     private float jumpHeight;
     [SerializeField]
-    private bool jumpCall, jumping, isGrounded;
+    private bool jumpCall, jumping;
+    public bool isGrounded;
 
     //direction variables
     public bool isFacingRight;
@@ -125,19 +126,7 @@ public class playerMovement : MonoBehaviour {
         }
     }
 
-    //If the collider under the player's feet comes in contact
-    //with a platform tagged as ground, isGrounded is set to 
-    //true
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "ground")
-        {
-            isGrounded = true;
-        }
 
-
-        
-    }
 
 
 

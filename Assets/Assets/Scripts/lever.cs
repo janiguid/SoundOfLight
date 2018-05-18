@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class lever : MonoBehaviour {
 
-    public Sprite[] sprite;
     public bool isActive = false;
-
-
+    public door correspondingDoor;
 
     public void Activate()
     { 
         isActive = !isActive;
+
+        //this connects the lever and door
+        correspondingDoor.Activate();
         if (isActive)
         {
             gameObject.GetComponent<Animator>().SetBool("isActive", true);
