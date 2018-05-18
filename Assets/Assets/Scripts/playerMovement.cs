@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
 
     private Animator animator;
+    [SerializeField]
     private Rigidbody2D rb2D;
 
     //horizontal movement
@@ -46,6 +47,9 @@ public class playerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
+
+
         float horizontalVelocity = Input.GetAxis("Horizontal");
 
         if (horizontalVelocity != 0)
@@ -85,7 +89,7 @@ public class playerMovement : MonoBehaviour {
 
         determineDirection();
 
-        Debug.Log(rb2D.velocity.y);
+        //Debug.Log(rb2D.velocity.y);
 
         if (jumpCall)
         {
@@ -130,6 +134,8 @@ public class playerMovement : MonoBehaviour {
         {
             isGrounded = true;
         }
+
+
         
     }
 
