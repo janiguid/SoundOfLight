@@ -17,10 +17,11 @@ public class playerShoot : playerMovement {
         magicOrbSpeed = 0.25f;
         thrown = false;
         isFacingRight = true;
+        
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	private void Update () {
 
         determineDirection();
 

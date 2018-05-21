@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
 
     private Animator animator;
+    public AudioSource footsteps;
     [SerializeField]
     private Rigidbody2D rb2D;
 
@@ -43,6 +44,8 @@ public class playerMovement : MonoBehaviour {
 
         //direction variables
         isFacingRight = true;
+
+
 	}
 
     // Update is called once per frame
@@ -50,26 +53,46 @@ public class playerMovement : MonoBehaviour {
     {
 
 
-
+        float verticalVelocity = rb2D.velocity.y;
         float horizontalVelocity = Input.GetAxis("Horizontal");
 
         if (horizontalVelocity != 0)
         {
             animator.SetBool("Moving", true);
+            if(footsteps.isPlaying == false)
+            {
+                footsteps.Play();
+            }
         }
         else
         {
             animator.SetBool("Moving", false);
+            if(footsteps.isPlaying == true)
+            {
+                footsteps.Stop();
+            }
+        }
+
+        if (isGrounded)
+        {
+            animator.SetBool("isGrounded", true);
+        }else if (!isGrounded)
+        {
+            animator.SetBool("isGrounded", false);
         }
 
         animator.SetFloat("xVel", horizontalVelocity);
-
+        animator.SetFloat("yVel", verticalVelocity);
         if (Input.GetKey(KeyCode.UpArrow) && isGrounded)
         {
             jumpCall = true;
+            
+            Debug.Log(verticalVelocity);
         }
 
     }
+
+
 
     //The difference between Update and FixedUpdate
     //is that, unlike Update, FixedUpdate is not dependent on the 
@@ -103,7 +126,7 @@ public class playerMovement : MonoBehaviour {
     {
         //https://www.youtube.com/watch?v=7KiK0Aqtmzc
         //essentially increases gravity on the way down
-        Debug.Log("nani");
+        //Debug.Log("nani");
 
         isGrounded = false;
 
@@ -111,7 +134,7 @@ public class playerMovement : MonoBehaviour {
 
         jumpCall = false;
 
-
+        Debug.Log(rb2D.velocity.y);
     }
 
     public void determineDirection()
