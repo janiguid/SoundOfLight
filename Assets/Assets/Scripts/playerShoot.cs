@@ -18,6 +18,7 @@ public class playerShoot : playerMovement {
         thrown = false;
         isFacingRight = true;
         
+        
 	}
 	
 	// Update is called once per frame
@@ -35,7 +36,6 @@ public class playerShoot : playerMovement {
         
         if (Input.GetKey(KeyCode.LeftShift) && thrown == true )
         {
-            magicOrb.transform.position = magicOrbPlaceholder.transform.position;
             flying = false;
         }
 	}

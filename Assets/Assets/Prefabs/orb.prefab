@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 108055633534923936}
   - component: {fileID: 212104347872054514}
   - component: {fileID: 114480729838385150}
+  - component: {fileID: 95935447885501402}
   m_Layer: 0
   m_Name: orb
   m_TagString: Orb
@@ -36,12 +37,30 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1953048737053560}
   m_LocalRotation: {x: -0, y: 0.99998134, z: -0, w: -0.0061085457}
-  m_LocalPosition: {x: -3.84, y: -0.09, z: -0.85538435}
+  m_LocalPosition: {x: -5.31, y: 2.12, z: -0.85538435}
   m_LocalScale: {x: 2.3830156, y: 2.3830154, z: 2.3830156}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95935447885501402
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953048737053560}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1f7da8f08de2fb49aa7b1e458fadb16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!108 &108055633534923936
 Light:
   m_ObjectHideFlags: 1
@@ -91,6 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPlace: {fileID: 0}
   playerShoot: {fileID: 0}
+  anim: {fileID: 0}
+  timer: 0
 --- !u!212 &212104347872054514
 SpriteRenderer:
   m_ObjectHideFlags: 1

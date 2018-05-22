@@ -7,7 +7,7 @@ public class playerMovement : MonoBehaviour {
     private Animator animator;
     public AudioSource footsteps;
     [SerializeField]
-    private Rigidbody2D rb2D;
+    private static Rigidbody2D rb2D;
 
     //horizontal movement
     [SerializeField]
@@ -56,22 +56,30 @@ public class playerMovement : MonoBehaviour {
         float verticalVelocity = rb2D.velocity.y;
         float horizontalVelocity = Input.GetAxis("Horizontal");
 
-        if (horizontalVelocity != 0)
+
+        if (horizontalVelocity != 0 && isGrounded)
         {
             animator.SetBool("Moving", true);
-            if(footsteps.isPlaying == false)
+            if (footsteps.isPlaying == false)
             {
-                footsteps.Play();
+                if (isGrounded)
+                {
+                    footsteps.Play();
+                }
+
             }
         }
-        else
+        else if (horizontalVelocity == 0 && isGrounded)
         {
             animator.SetBool("Moving", false);
-            if(footsteps.isPlaying == true)
+            if (footsteps.isPlaying == true)
             {
                 footsteps.Stop();
             }
         }
+        
+        if(!isGrounded) footsteps.Stop();
+
 
         if (isGrounded)
         {
