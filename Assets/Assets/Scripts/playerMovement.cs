@@ -77,8 +77,9 @@ public class playerMovement : MonoBehaviour {
                 footsteps.Stop();
             }
         }
+
+        if (!isGrounded)footsteps.Stop();
         
-        if(!isGrounded) footsteps.Stop();
 
 
         if (isGrounded)
