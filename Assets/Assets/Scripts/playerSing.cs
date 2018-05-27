@@ -6,15 +6,18 @@ public class playerSing : playerMovement {
 
     public Light orb;
     public Rigidbody2D rb2d;
+    public Animator anim;
+    public AudioSource song;
 
     public int maxLightRadius;
     public int minLightRadius;
     public float lightRangeIncrementor;
     public float lightRangeDecrementor;
-    public AudioSource song;
+    
 
 	// Use this for initialization
 	void Start () {
+        anim = GetComponent<Animator>();
         orb = GameObject.FindGameObjectWithTag("Orb").GetComponent<Light>();
         song = GetComponent<AudioSource>();
         maxLightRadius = 5;
@@ -30,11 +33,13 @@ public class playerSing : playerMovement {
         if (Input.GetKeyDown(KeyCode.Z) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
         {
             Debug.Log("singing");
+            anim.SetBool("isSinging", true);
             song.Play();
         }else if (Input.GetKeyUp(KeyCode.Z) || rb2d.velocity.x != 0)
         {
             Debug.Log("stopped");
             Debug.Log(rb2d.velocity.x);
+            anim.SetBool("isSinging", false);
             song.Stop();
         }
 
