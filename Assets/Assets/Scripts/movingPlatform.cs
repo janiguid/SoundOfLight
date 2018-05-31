@@ -12,11 +12,6 @@ public class movingPlatform : MonoBehaviour {
     public bool isActive;
     
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
         if (!isActive) return;
@@ -35,6 +30,16 @@ public class movingPlatform : MonoBehaviour {
             Swap();
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        collision.transform.SetParent(transform);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collision.transform.SetParent(null);
+    }
 
     void Swap()
     {
