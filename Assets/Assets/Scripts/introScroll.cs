@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class introScroll : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class introScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(lightSource.range < 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
         if (sceneCounter > 6)
         {
             canMove = false;
