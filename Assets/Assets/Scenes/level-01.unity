@@ -144,7 +144,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: adb331fa509c2fc458eeb65a341d504d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -301,11 +301,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4592350589868140, guid: 93a09b9c7372ba14cb4ca012a5550565, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.95
+      value: -3.79
       objectReference: {fileID: 0}
     - target: {fileID: 4592350589868140, guid: 93a09b9c7372ba14cb4ca012a5550565, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.91
+      value: 7.42
       objectReference: {fileID: 0}
     - target: {fileID: 4592350589868140, guid: 93a09b9c7372ba14cb4ca012a5550565, type: 2}
       propertyPath: m_LocalPosition.z
@@ -369,7 +369,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2349488c9b1222142b9c2f3818250e7f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
