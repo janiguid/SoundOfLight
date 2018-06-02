@@ -29,6 +29,15 @@ public class lever : MonoBehaviour {
             isActive = !isActive;
 
             correspondingPlatform.Activate();
+            if (isActive)
+            {
+                gameObject.GetComponent<Animator>().SetBool("isActive", true);
+            }
+            else if (isActive == false)
+            {
+                gameObject.GetComponent<Animator>().SetBool("isActive", false);
+            }
+
         }
 
     }

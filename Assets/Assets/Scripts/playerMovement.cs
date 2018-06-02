@@ -51,11 +51,13 @@ public class playerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
 
 
         float verticalVelocity = rb2D.velocity.y;
         float horizontalVelocity = Input.GetAxis("Horizontal");
 
+        if (verticalVelocity > 0) isGrounded = false;
 
         if (horizontalVelocity != 0 && isGrounded)
         {
@@ -92,8 +94,9 @@ public class playerMovement : MonoBehaviour {
 
         animator.SetFloat("xVel", horizontalVelocity);
         animator.SetFloat("yVel", verticalVelocity);
-        if (Input.GetKey(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKey(KeyCode.UpArrow) && isGrounded && verticalVelocity < 0.01)
         {
+            isGrounded = false;
             jumpCall = true;
             
             Debug.Log(verticalVelocity);
