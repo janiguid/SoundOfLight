@@ -8,6 +8,15 @@ public class door : MonoBehaviour {
     public bool isActive = false;
     public bool isUnlocked = false;
 
+    public void Start()
+    {
+        if(gameObject.name == "firstDoor")
+        {
+            //gameObject.GetComponent<Animator>().Play("DoorOpen");
+            gameObject.GetComponent<Animator>().SetBool("isActive", true);
+        }
+    }
+
     public void Activate()
     {
         isActive = !isActive;
