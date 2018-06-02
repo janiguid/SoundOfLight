@@ -6,21 +6,31 @@ public class lever : MonoBehaviour {
 
     public bool isActive = false;
     public door correspondingDoor;
+    public movingPlatform correspondingPlatform;
 
     public void Activate()
     { 
-        isActive = !isActive;
+        if(correspondingDoor != null)
+        {
+            isActive = !isActive;
 
-        //this connects the lever and door
-        correspondingDoor.Activate();
-        if (isActive)
+            //this connects the lever and door
+            correspondingDoor.Activate();
+            if (isActive)
+            {
+                gameObject.GetComponent<Animator>().SetBool("isActive", true);
+            }
+            else if (isActive == false)
+            {
+                gameObject.GetComponent<Animator>().SetBool("isActive", false);
+            }
+        }else if(correspondingPlatform != null)
         {
-            gameObject.GetComponent<Animator>().SetBool("isActive", true);
+            isActive = !isActive;
+
+            correspondingPlatform.Activate();
         }
-        else if (isActive == false)
-        {
-            gameObject.GetComponent<Animator>().SetBool("isActive", false);
-        }
+
     }
 
 }

@@ -33,12 +33,23 @@ public class movingPlatform : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.transform.SetParent(transform);
+        //setting the player's transform as a child of the 
+        //moving platform makes the player move with the 
+        //platform
+        if (collision.tag == "Player")
+        {
+            collision.gameObject.transform.SetParent(transform);
+        }
+        
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.transform.SetParent(null);
+        if(collision.tag == "Player")
+        {
+            collision.gameObject.transform.SetParent(null);
+        }
     }
 
     void Swap()
@@ -47,5 +58,10 @@ public class movingPlatform : MonoBehaviour {
         targetLocation = initialLocation;
         initialLocation = temp;
 
+    }
+
+    public void Activate()
+    {
+        isActive = !isActive;
     }
 }
