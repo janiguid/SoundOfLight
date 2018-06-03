@@ -56,8 +56,9 @@ public class playerMovement : MonoBehaviour {
 
         float verticalVelocity = rb2D.velocity.y;
         float horizontalVelocity = Input.GetAxis("Horizontal");
+        xMove = Input.GetAxis("Horizontal");
 
-        if (verticalVelocity > 0) isGrounded = false;
+        if (verticalVelocity > 0.1) isGrounded = false;
 
         if (horizontalVelocity != 0 && isGrounded)
         {
@@ -119,8 +120,10 @@ public class playerMovement : MonoBehaviour {
         //the right arrow. We multiply this value to 
         //movementSpeed to affect the direction the player
         //goes to.
-        xMove = Input.GetAxis("Horizontal");
+        //xMove = Input.GetAxis("Horizontal");
+        Debug.Log("before walk");
         rb2D.velocity = new Vector2(xMove * movementSpeed, rb2D.velocity.y);
+        Debug.Log(rb2D.velocity.x);
         
 
         determineDirection();
