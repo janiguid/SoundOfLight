@@ -500,10 +500,13 @@ MonoBehaviour:
   audio: {fileID: 826641600}
   myAudio: {fileID: 0}
   sprite:
-  - {fileID: 21300000, guid: 40810c6bf0875bc40a27044f1f0bd2b0, type: 3}
-  - {fileID: 21300000, guid: 5108893398753c94395d2fcbc7aa82f3, type: 3}
-  - {fileID: 21300000, guid: 9514d36ce37a46e4c924a72bfe59f543, type: 3}
-  - {fileID: 21300000, guid: d151dd1a46e6ae54ab617b23bfac1fa6, type: 3}
+  - {fileID: 21300000, guid: 05d9b602efc0c9148b140ba20e80fdd3, type: 3}
+  - {fileID: 21300000, guid: b9b17c8baca104147bb84f4b9c345da8, type: 3}
+  - {fileID: 21300000, guid: d8f4c04420a62a14589c980eed14e06d, type: 3}
+  - {fileID: 21300000, guid: 183c248c875a2594ebed9359a2a81c80, type: 3}
+  - {fileID: 21300000, guid: 3853ac5d35b66c846a597a0dfc217cdc, type: 3}
+  - {fileID: 21300000, guid: 15d805131442fed40ab36694401554f3, type: 3}
+  - {fileID: 21300000, guid: f0d9a78c93229a74e8e4f7ebbce53cf2, type: 3}
   spriteRenderer: {fileID: 1725759776}
   timer: 0
   currentIndex: 0
