@@ -34,7 +34,7 @@ public class playerShoot : playerMovement {
             ShootLeft();
         }
         
-        if (Input.GetKey(KeyCode.LeftShift) && thrown == true )
+        if (Input.GetKey(KeyCode.Z) && thrown == true )
         {
             flying = false;
         }
@@ -42,14 +42,14 @@ public class playerShoot : playerMovement {
 
     void ShootRight()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && thrown == false)
+        if (Input.GetKey(KeyCode.Z) && thrown == false)
         {
             magicOrb.transform.position = new Vector3(magicOrb.transform.position.x + magicOrbSpeed,
                 magicOrb.transform.position.y, magicOrb.transform.position.z);
             flying = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.Z))
         {
             thrown = !thrown;
         }
@@ -57,14 +57,14 @@ public class playerShoot : playerMovement {
 
     void ShootLeft()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && thrown == false)
+        if (Input.GetKey(KeyCode.Z) && thrown == false)
         {
             magicOrb.transform.position = new Vector3(magicOrb.transform.position.x - magicOrbSpeed,
                 magicOrb.transform.position.y, magicOrb.transform.position.z);
             flying = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.Z))
         {
             thrown = !thrown;
         }

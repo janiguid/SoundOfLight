@@ -30,12 +30,12 @@ public class playerSing : playerMovement {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Z) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
+        if (Input.GetKeyDown(KeyCode.X) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
         {
             Debug.Log("singing");
             anim.SetBool("isSinging", true);
             song.Play();
-        }else if (Input.GetKeyUp(KeyCode.Z) || rb2d.velocity.x != 0)
+        }else if (Input.GetKeyUp(KeyCode.X) || rb2d.velocity.x != 0)
         {
             Debug.Log("stopped");
             Debug.Log(rb2d.velocity.x);
@@ -49,7 +49,7 @@ public class playerSing : playerMovement {
         //until it reaches the peak
         if (rb2d.velocity.x == 0)
         {
-            if (Input.GetKey(KeyCode.Z) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
+            if (Input.GetKey(KeyCode.X) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
             {
                 Debug.Log(rb2d.velocity.x);
                 if (orb.range <= maxLightRadius)
