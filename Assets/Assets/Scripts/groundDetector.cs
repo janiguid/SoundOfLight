@@ -15,4 +15,7 @@ public class groundDetector : MonoBehaviour {
             GetComponentInParent<playerMovement>().isGrounded = true;
         }
     }
+
+
+
 }
