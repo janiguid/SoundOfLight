@@ -30,19 +30,19 @@ public class orbDescend : MonoBehaviour {
         if(transform.position == endLoc.position && arisen != true)
         {
             anim.Play("LyteArise");
-            audio.Stop();
+            //audio.Stop();
             arisen = true;
-            myAudio.Play();
+            //myAudio.Play();
             spriteRenderer.sprite = sprite[currentIndex];
             currentIndex++;
         }
         transform.position = Vector3.MoveTowards(transform.position, endLoc.position, speed);
 
-        if (transform.position == endLoc.position && arisen == true && currentIndex != 4)
+        if (transform.position == endLoc.position && arisen == true && currentIndex != 7)
         {
             timer += Time.fixedDeltaTime;
 
-            if (timer > 5)
+            if (timer > 8)
             {
                 spriteRenderer.sprite = sprite[currentIndex];
                 currentIndex++;
