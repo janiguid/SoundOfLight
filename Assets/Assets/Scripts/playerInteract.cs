@@ -16,21 +16,26 @@ public class playerInteract : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.X)){
+        if (Input.GetKeyDown(KeyCode.C))
+        {
             if (interactable == null) return;
-            interactable.GetComponent<lever>().Activate();
+                interactable.GetComponent<lever>().Activate();
+            
         }
+        
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (interactable == null) return;
-            if(interactable.name == "firstDoor")
+            if (interactable.name == "firstDoor")
             {
                 interactable.GetComponent<door>().openFirstDoor();
-            }else if(interactable.GetComponent<door>().isActive == true)
+            }
+            else if (interactable.GetComponent<door>().isActive == true)
             {
                 interactable.GetComponent<door>().openFirstDoor();
             }
         }
+        
 
     }
 
