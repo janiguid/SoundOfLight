@@ -7,11 +7,22 @@ public class endingLyteScript : MonoBehaviour {
 
 
     public Transform destination;
+    public Transform orbDestination;
     public Animator anim;
+    public Light orb;
+    public AudioSource song;
+    public AudioSource footsteps;
 
 
-    //public Animator animator;
+    public float orbMaxRange;
+    public float orbMovementSpeed;
+    public float time;
+    public float pauseBeforeSong;
+    public float orbRangeIncrementor;
+
+    public bool timerDone;
     public bool reachedDestination;
+    public bool orbApexReached;
 
 
     private void Start()
@@ -32,10 +43,47 @@ public class endingLyteScript : MonoBehaviour {
             GetComponent<playerMovement>().enabled = false;
             GetComponent<playerSing>().enabled = false;
             GetComponent<playerShoot>().enabled = false;
-            //GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            orb.GetComponent<orbFollow>().enabled = false;
             anim.SetBool("Ending", true);
-            anim.Play("LyteIdle");
+            footsteps.Stop();
+            Timer(pauseBeforeSong);
+            if(timerDone == true)
+            {
+                if (orb.range < orbMaxRange)
+                {
+                    orb.range += 0.02f;
+                    if (song.isPlaying == false)
+                    {
+                        song.Play();
+                   
+                    }
+                }else if(orb.range >= orbMaxRange && orbApexReached == false)
+                {
+                    orb.GetComponent<Transform>().position = Vector3.MoveTowards(orb.GetComponent<Transform>().position,
+                        orbDestination.position, orbMovementSpeed);
+                    if(orb.range <= 80)
+                    {
+                        orb.range += orbRangeIncrementor;
+                    }
+                    
+                }
+            }
+
+            
         }
+
+
+    }
+
+    void Timer(float requiredTime)
+    {
+        time += Time.fixedDeltaTime;
+        if(time > requiredTime)
+        {
+            timerDone = true;
+            time = 0;
+        }
+
     }
     //// Use this for initialization
     //void Start () {
