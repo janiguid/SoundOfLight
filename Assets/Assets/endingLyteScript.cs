@@ -47,7 +47,19 @@ public class endingLyteScript : MonoBehaviour {
             anim.SetBool("Ending", true);
             footsteps.Stop();
             Timer(pauseBeforeSong);
-            if(timerDone == true)
+            if (orb.transform.position == orbDestination.position && orbApexReached == false)
+            {
+                orbApexReached = true;
+            }
+
+            if (orbApexReached)
+            {
+                if (orb.range <= 80)
+                {
+                    orb.range += orbRangeIncrementor;
+                }
+            }
+            if (timerDone == true)
             {
                 if (orb.range < orbMaxRange)
                 {
@@ -61,10 +73,7 @@ public class endingLyteScript : MonoBehaviour {
                 {
                     orb.GetComponent<Transform>().position = Vector3.MoveTowards(orb.GetComponent<Transform>().position,
                         orbDestination.position, orbMovementSpeed);
-                    if(orb.range <= 80)
-                    {
-                        orb.range += orbRangeIncrementor;
-                    }
+
                     
                 }
             }
