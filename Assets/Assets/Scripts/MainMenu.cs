@@ -5,30 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    int indicator = 1;
-
-    private void update()
+    public int indicator;
+    public string play;
+    public float xOffset = 100f;
+    void Start()
+    {
+        indicator = 1;
+    }
+    void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (indicator == 4)
+            {
                 indicator = 1;
+            }
             else
-                indicator += 1;
+            {
+                indicator += 1;         
+            }
+        
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (indicator == 1)
+            {
                 indicator = 4;
+            }
             else
+            {
                 indicator -= 1;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && indicator == 1) //play
+        if (Input.GetKeyDown(KeyCode.C) && indicator == 1) //play
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(play);
         }
 
         if (Input.GetKeyDown(KeyCode.Return) && indicator == 2) //Help
