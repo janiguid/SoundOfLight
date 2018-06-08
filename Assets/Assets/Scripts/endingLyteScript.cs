@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class endingLyteScript : MonoBehaviour {
 
@@ -8,17 +9,19 @@ public class endingLyteScript : MonoBehaviour {
 
     public Transform destination;
     public Transform orbDestination;
+    public Transform songFadePoint;
     public Animator anim;
     public Light orb;
     public AudioSource song;
     public AudioSource footsteps;
 
-
+    public float orbFinalRange;
     public float orbMaxRange;
     public float orbMovementSpeed;
     public float time;
     public float pauseBeforeSong;
     public float orbRangeIncrementor;
+    public float songFadeSpeed;
 
     public bool timerDone;
     public bool reachedDestination;
@@ -32,6 +35,11 @@ public class endingLyteScript : MonoBehaviour {
 
     private void Update()
     {
+        if(orb.range >= orbFinalRange)
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if(destination.position.x <= transform.position.x && GetComponent<playerMovement>().isGrounded)
         {
             reachedDestination = true;
@@ -54,7 +62,7 @@ public class endingLyteScript : MonoBehaviour {
 
             if (orbApexReached)
             {
-                if (orb.range <= 80)
+                if (orb.range <= orbFinalRange)
                 {
                     orb.range += orbRangeIncrementor;
                 }
@@ -63,7 +71,7 @@ public class endingLyteScript : MonoBehaviour {
             {
                 if (orb.range < orbMaxRange)
                 {
-                    orb.range += 0.02f;
+                    orb.range += 0.08f;
                     if (song.isPlaying == false)
                     {
                         song.Play();
@@ -73,7 +81,11 @@ public class endingLyteScript : MonoBehaviour {
                 {
                     orb.GetComponent<Transform>().position = Vector3.MoveTowards(orb.GetComponent<Transform>().position,
                         orbDestination.position, orbMovementSpeed);
-
+                    
+                    if(orb.transform.position.y >= songFadePoint.position.y)
+                    {
+                        song.volume -= songFadeSpeed;
+                    }
                     
                 }
             }

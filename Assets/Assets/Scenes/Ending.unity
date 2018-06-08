@@ -169,6 +169,34 @@ Transform:
   m_Father: {fileID: 575552104}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &197318389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 197318390}
+  m_Layer: 0
+  m_Name: songFadePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197318390
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197318389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.844428, y: 14.48, z: 4.5429688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271093977 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1602788625143212, guid: 84ecfb53db712d24fb11e78dabfa48c3,
@@ -192,20 +220,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 271093977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99bd93794c5610f42bfdea90a91474cb, type: 3}
+  m_Script: {fileID: 11500000, guid: bc55e8492c0bcda4382fbeb6ae074a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 2088529507}
   orbDestination: {fileID: 1408294709}
+  songFadePoint: {fileID: 197318390}
   anim: {fileID: 0}
   orb: {fileID: 317273106}
   song: {fileID: 271093980}
   footsteps: {fileID: 271093978}
-  orbMaxRange: 10
-  orbMovementSpeed: 0.05
+  orbFinalRange: 0
+  orbMaxRange: 0
+  orbMovementSpeed: 0
   time: 0
-  pauseBeforeSong: 1.5
-  orbRangeIncrementor: 0.1
+  pauseBeforeSong: 0
+  orbRangeIncrementor: 0
+  songFadeSpeed: 0
   timerDone: 0
   reachedDestination: 0
   orbApexReached: 0
@@ -282,6 +313,11 @@ Prefab:
         type: 2}
       propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82563973028381504, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: m_Pitch
+      value: 1.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84ecfb53db712d24fb11e78dabfa48c3, type: 2}
@@ -468,7 +504,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 575552102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.77714777}
+  m_LocalPosition: {x: 0, y: 0, z: 0.32}
   m_LocalScale: {x: 1, y: 1, z: 0.25904927}
   m_Children:
   - {fileID: 1558686431}
@@ -586,6 +622,11 @@ Prefab:
       propertyPath: pointToBeginTransition
       value: 
       objectReference: {fileID: 1491199613}
+    - target: {fileID: 114812570711548074, guid: eef3b0858a1a8f14f9b2d38e1b559899,
+        type: 2}
+      propertyPath: fadeOutSpeed
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
   m_IsPrefabParent: 0
@@ -935,7 +976,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1408294708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.7, y: 10.1, z: -9.1}
+  m_LocalPosition: {x: 5.7, y: 20, z: -13.5}
   m_LocalScale: {x: 1.9892659, y: 1.9892659, z: 1.9892659}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1005,7 +1046,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491199612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.964227, y: 7.2, z: 30.882156}
+  m_LocalPosition: {x: 4.964227, y: 18.7, z: 30.882156}
   m_LocalScale: {x: 4.191408, y: 5.194327, z: 4.729372}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1271,7 +1312,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4227211811440582, guid: 93b11af972287f14e9b984da41c58a68, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -14.1
       objectReference: {fileID: 0}
     - target: {fileID: 4227211811440582, guid: 93b11af972287f14e9b984da41c58a68, type: 2}
       propertyPath: m_LocalRotation.x

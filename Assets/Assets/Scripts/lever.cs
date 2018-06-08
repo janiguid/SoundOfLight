@@ -10,12 +10,16 @@ public class lever : MonoBehaviour {
 
     public void Activate()
     { 
+        //outer if statements determine which object to activate
         if(correspondingDoor != null)
         {
             isActive = !isActive;
+            GetComponent<AudioSource>().Play();
 
             //this connects the lever and door
             correspondingDoor.Activate();
+
+            //responsible for animation of levers
             if (isActive)
             {
                 gameObject.GetComponent<Animator>().SetBool("isActive", true);
@@ -27,8 +31,12 @@ public class lever : MonoBehaviour {
         }else if(correspondingPlatform != null)
         {
             isActive = !isActive;
+            GetComponent<AudioSource>().Play();
 
+            //calls activate function in corresponding platform
             correspondingPlatform.Activate();
+
+            //animation of lever
             if (isActive)
             {
                 gameObject.GetComponent<Animator>().SetBool("isActive", true);

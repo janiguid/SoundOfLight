@@ -32,17 +32,19 @@ public class door : MonoBehaviour {
 
     public void openFirstDoor()
     {
-        //SceneManager.GetActiveScene().buildIndex + 1)
-        if(SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            Debug.Log("supposed to exit");
-            SceneManager.LoadScene(0);
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        
+        ////SceneManager.GetActiveScene().buildIndex + 1)
+        //if(SceneManager.GetActiveScene().buildIndex == 3)
+        //{
+        //    Debug.Log("supposed to exit");
+        //    SceneManager.LoadScene(0);
+        //}
+        //else
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //}
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 
 }

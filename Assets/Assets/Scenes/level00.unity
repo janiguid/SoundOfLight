@@ -628,7 +628,7 @@ Prefab:
     - target: {fileID: 114047813500997866, guid: 3dc81674ca92a7044b3abf555c28f7b3,
         type: 2}
       propertyPath: isUnlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1529335548548678, guid: 3dc81674ca92a7044b3abf555c28f7b3, type: 2}
       propertyPath: m_Name
@@ -637,7 +637,7 @@ Prefab:
     - target: {fileID: 114047813500997866, guid: 3dc81674ca92a7044b3abf555c28f7b3,
         type: 2}
       propertyPath: isActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 95181537985159482, guid: 3dc81674ca92a7044b3abf555c28f7b3,
         type: 2}

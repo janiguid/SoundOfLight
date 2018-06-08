@@ -30,6 +30,8 @@ public class playerSing : playerMovement {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //if Lyte is completely stilland x is pressed, play song and singing animation,
         if (Input.GetKeyDown(KeyCode.X) && rb2d.velocity.x == 0 && rb2d.velocity.y == 0)
         {
             Debug.Log("singing");
@@ -69,9 +71,4 @@ public class playerSing : playerMovement {
         }
     }
 
-    private void FixedUpdate()
-    {
-
-
-    }
 }

@@ -15,10 +15,12 @@ public class movingPlatform : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (!isActive) return;
+
+        //if platform has not reached destination, keep moving towards it
+        //else swap
 		if(transform.position != targetLocation.position)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, platformSpeed);
-            //Debug.Log("Moving towards " + targetLocation.position.x);
         }else if(isHorizontal && transform.position.x >= targetLocation.position.x)
         {
             //make current location equal to target location

@@ -9,13 +9,12 @@ public class playerInteract : MonoBehaviour {
 
     public GameObject interactable;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
+        
+        //if player presses interact button, activate whatever 
+        //interactable object Lyte is near
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (interactable == null) return;
@@ -34,6 +33,12 @@ public class playerInteract : MonoBehaviour {
             {
                 interactable.GetComponent<door>().openFirstDoor();
             }
+            else
+            {
+                //plays locked sound when player tries to open the door
+                //and its not active
+                interactable.GetComponent<AudioSource>().Play();
+            }
         }
         
 
@@ -41,9 +46,8 @@ public class playerInteract : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("blah");
-
-
+        //*this is unnecessarily redundant
+        //ensures Lyte only interacts with levers and doors
         if(collision.tag == "lever")
         {
             interactable = collision.gameObject;
@@ -59,8 +63,6 @@ public class playerInteract : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-            interactable = null;
-        
+        interactable = null;
     }
 }

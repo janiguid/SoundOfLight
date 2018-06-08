@@ -53,13 +53,20 @@ public class playerMovement : MonoBehaviour {
     {
         
 
-
+        //gets the y velocity
         float verticalVelocity = rb2D.velocity.y;
+
+        //returns -1 or 1 depending on which arrow keys are pressed
         float horizontalVelocity = Input.GetAxis("Horizontal");
         xMove = Input.GetAxis("Horizontal");
 
-        if (verticalVelocity > 0.1) isGrounded = false;
 
+        //to ensure tight ground detection
+        if (verticalVelocity != 0) isGrounded = false;
+
+
+        //If x velocity is not 0, play walking animation
+        //and play footsteps sounds
         if (horizontalVelocity != 0 && isGrounded)
         {
             animator.SetBool("Moving", true);
@@ -81,10 +88,12 @@ public class playerMovement : MonoBehaviour {
             }
         }
 
+
+        //stops the footsteps sounds once player leaves ground
         if (!isGrounded)footsteps.Stop();
         
 
-
+        //this deals with jumping animations
         if (isGrounded)
         {
             animator.SetBool("isGrounded", true);
@@ -93,8 +102,13 @@ public class playerMovement : MonoBehaviour {
             animator.SetBool("isGrounded", false);
         }
 
+        //these are required to determine which animation to play
         animator.SetFloat("xVel", horizontalVelocity);
         animator.SetFloat("yVel", verticalVelocity);
+
+        //this gets inputs to call the jump function
+        //we do this in the update function because
+        //we want more responsive jumps
         if (Input.GetKey(KeyCode.UpArrow) && isGrounded && verticalVelocity < 0.01)
         {
             isGrounded = false;
@@ -126,10 +140,10 @@ public class playerMovement : MonoBehaviour {
         Debug.Log(rb2D.velocity.x);
         
 
+
         determineDirection();
 
-        //Debug.Log(rb2D.velocity.y);
-
+        
         if (jumpCall)
         {
             Jump();
@@ -141,7 +155,6 @@ public class playerMovement : MonoBehaviour {
     {
         //https://www.youtube.com/watch?v=7KiK0Aqtmzc
         //essentially increases gravity on the way down
-        //Debug.Log("nani");
 
         isGrounded = false;
 
@@ -149,11 +162,11 @@ public class playerMovement : MonoBehaviour {
 
         jumpCall = false;
 
-        Debug.Log(rb2D.velocity.y);
     }
 
     public void determineDirection()
     {
+        //if x velocity is greater than 0, lyte is facing right
         if (xMove > 0)
         {
             isFacingRight = true;
