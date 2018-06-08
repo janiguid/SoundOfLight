@@ -22,7 +22,7 @@ public class playerInteract : MonoBehaviour {
             
         }
         
-        else if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (interactable == null) return;
             if (interactable.name == "firstDoor")

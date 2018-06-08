@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class orbDescend : MonoBehaviour {
 
@@ -42,13 +43,23 @@ public class orbDescend : MonoBehaviour {
         {
             timer += Time.fixedDeltaTime;
 
-            if (timer > 8)
+            if (timer > 6)
             {
                 spriteRenderer.sprite = sprite[currentIndex];
                 currentIndex++;
                 timer = 0;
             }
+        }else if(transform.position == endLoc.position && arisen == true && currentIndex == 7)
+        {
+            timer += Time.fixedDeltaTime;
+
+            if (timer > 6)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
+
+
 
     }
 }
