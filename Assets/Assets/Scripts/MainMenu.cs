@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     public int indicator;
-    public string play;
     public float xOffset = 100f;
     void Start()
     {
@@ -42,22 +41,22 @@ public class MainMenu : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.C) && indicator == 1) //play
         {
-            SceneManager.LoadScene(play);
+            SceneManager.LoadScene("Intro");
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && indicator == 2) //Help
+        if (Input.GetKeyDown(KeyCode.C) && indicator == 2) //controls
+        {
+            SceneManager.LoadScene("controls");
+        }
+
+        if (Input.GetKeyDown(KeyCode.C) && indicator == 3) //Credits
         {
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && indicator == 3) //Credits
+        if (Input.GetKeyDown(KeyCode.C) && indicator == 4) //Quit
         {
-            
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return) && indicator == 4) //Quit
-        {
-            
+            Application.Quit();
         }
 
 
