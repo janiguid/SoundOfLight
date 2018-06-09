@@ -51,7 +51,7 @@ public class MainMenu : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.C) && indicator == 3) //Credits
         {
-            
+            SceneManager.LoadScene("credits");
         }
 
         if (Input.GetKeyDown(KeyCode.C) && indicator == 4) //Quit
