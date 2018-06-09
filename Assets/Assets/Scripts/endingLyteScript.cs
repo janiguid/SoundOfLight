@@ -22,6 +22,7 @@ public class endingLyteScript : MonoBehaviour {
     public float pauseBeforeSong;
     public float orbRangeIncrementor;
     public float songFadeSpeed;
+    public float exitCountdown;
 
     public bool timerDone;
     public bool reachedDestination;
@@ -37,7 +38,8 @@ public class endingLyteScript : MonoBehaviour {
     {
         if(orb.range >= orbFinalRange)
         {
-            SceneManager.LoadScene(0);
+            exitCountdown -= Time.deltaTime;
+            if(exitCountdown < 0.1)SceneManager.LoadScene(0);
         }
 
         if(destination.position.x <= transform.position.x && GetComponent<playerMovement>().isGrounded)
@@ -64,6 +66,7 @@ public class endingLyteScript : MonoBehaviour {
             {
                 if (orb.range <= orbFinalRange)
                 {
+                    orbRangeIncrementor = 0.3f;
                     orb.range += orbRangeIncrementor;
                 }
             }
@@ -71,7 +74,7 @@ public class endingLyteScript : MonoBehaviour {
             {
                 if (orb.range < orbMaxRange)
                 {
-                    orb.range += 0.08f;
+                    orb.range += 0.02f;
                     if (song.isPlaying == false)
                     {
                         song.Play();

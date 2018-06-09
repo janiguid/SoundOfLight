@@ -230,13 +230,14 @@ MonoBehaviour:
   orb: {fileID: 317273106}
   song: {fileID: 271093980}
   footsteps: {fileID: 271093978}
-  orbFinalRange: 0
-  orbMaxRange: 0
-  orbMovementSpeed: 0
+  orbFinalRange: 102
+  orbMaxRange: 10
+  orbMovementSpeed: 0.06
   time: 0
-  pauseBeforeSong: 0
-  orbRangeIncrementor: 0
-  songFadeSpeed: 0
+  pauseBeforeSong: 2
+  orbRangeIncrementor: 0.2
+  songFadeSpeed: 0.01
+  exitCountdown: 4
   timerDone: 0
   reachedDestination: 0
   orbApexReached: 0
@@ -568,67 +569,61 @@ Transform:
   m_Father: {fileID: 308996810}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &799099214
+--- !u!1001 &977426537
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.86
       objectReference: {fileID: 0}
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_LocalPosition.y
       value: 2.33
       objectReference: {fileID: 0}
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4850511384160026, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+    - target: {fileID: 4323119510350116, guid: c42c421f66332b740b956de07f639bf6, type: 2}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114812570711548074, guid: eef3b0858a1a8f14f9b2d38e1b559899,
-        type: 2}
-      propertyPath: endScript
-      value: 
-      objectReference: {fileID: 271093989}
-    - target: {fileID: 114812570711548074, guid: eef3b0858a1a8f14f9b2d38e1b559899,
-        type: 2}
-      propertyPath: orbPosition
-      value: 
-      objectReference: {fileID: 317273107}
-    - target: {fileID: 114812570711548074, guid: eef3b0858a1a8f14f9b2d38e1b559899,
+    - target: {fileID: 114847131031103992, guid: c42c421f66332b740b956de07f639bf6,
         type: 2}
       propertyPath: pointToBeginTransition
       value: 
       objectReference: {fileID: 1491199613}
-    - target: {fileID: 114812570711548074, guid: eef3b0858a1a8f14f9b2d38e1b559899,
+    - target: {fileID: 114847131031103992, guid: c42c421f66332b740b956de07f639bf6,
         type: 2}
-      propertyPath: fadeOutSpeed
-      value: 0.03
+      propertyPath: orbPosition
+      value: 
+      objectReference: {fileID: 317273107}
+    - target: {fileID: 1431198102455868, guid: c42c421f66332b740b956de07f639bf6, type: 2}
+      propertyPath: m_Name
+      value: Sky
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: eef3b0858a1a8f14f9b2d38e1b559899, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: c42c421f66332b740b956de07f639bf6, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1127012658
 GameObject:

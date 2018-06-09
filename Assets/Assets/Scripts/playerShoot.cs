@@ -42,6 +42,8 @@ public class playerShoot : playerMovement {
 
     void ShootRight()
     {
+
+
         if (Input.GetKey(KeyCode.Z) && thrown == false)
         {
             magicOrb.transform.position = new Vector3(magicOrb.transform.position.x + magicOrbSpeed,
