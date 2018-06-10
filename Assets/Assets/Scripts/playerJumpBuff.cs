@@ -16,6 +16,9 @@ public class playerJumpBuff : MonoBehaviour {
     }
 
     void FixedUpdate () {
+        //increases the gravity when Lyte is on her way down
+        //when player just taps the jump button, it's a 
+        //low jump
         if (rb2D.velocity.y < 0)
         {
             rb2D.gravityScale = fallJumpMultiplier;

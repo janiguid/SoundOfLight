@@ -27,11 +27,13 @@ public class SkyScript : MonoBehaviour {
         if (orbPosition.position.y <= pointToBeginTransition.position.y) return;
         if(spriteColor.a > 0 && currentIndex != 7)
         {
+            //decreases the opacity of the color
             spriteColor.a -= fadeOutSpeed;
             spriteRenderer.color = spriteColor;
         }
         else if(spriteColor.a < 0 && currentIndex != 6)
         {
+            //changes which sprite we're dealing with
             currentIndex++;
             spriteRenderer.sprite = spriteRendererToFade[currentIndex].sprite;
             spriteRendererToFade[currentIndex].enabled = false;

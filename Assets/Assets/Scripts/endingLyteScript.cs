@@ -39,17 +39,21 @@ public class endingLyteScript : MonoBehaviour {
 
     private void Update()
     {
+        //once the orbs range caps out, transition back to
+        //main menu
         if(orb.range >= orbFinalRange)
         {
             exitCountdown -= Time.deltaTime;
             if(exitCountdown < 0.1)SceneManager.LoadScene(0);
         }
 
+
         if(destination.position.x <= transform.position.x && GetComponent<playerMovement>().isGrounded)
         {
             reachedDestination = true;
         }
 
+        //disables player movements once player reaches stop point
         if (reachedDestination && GetComponent<playerMovement>().isGrounded)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
@@ -60,6 +64,8 @@ public class endingLyteScript : MonoBehaviour {
             anim.SetBool("Ending", true);
             footsteps.Stop();
             Timer(pauseBeforeSong);
+
+            //play bird, wind, and theme song once orb reaches apex
             if (orb.transform.position == orbDestination.position && orbApexReached == false)
             {
                 orbApexReached = true;
@@ -78,6 +84,8 @@ public class endingLyteScript : MonoBehaviour {
 
             }
 
+            //increase the rate of which the orb's 
+            //light range increases
             if (orbApexReached)
             {
                 if (orb.range <= orbFinalRange)
@@ -98,6 +106,7 @@ public class endingLyteScript : MonoBehaviour {
                     }
                 }else if(orb.range >= orbMaxRange && orbApexReached == false)
                 {
+                    //makes orb fly up to the sky
                     anim.SetBool("isLookingUp", true);
 
                     orb.GetComponent<Transform>().position = Vector3.MoveTowards(orb.GetComponent<Transform>().position,
@@ -124,31 +133,4 @@ public class endingLyteScript : MonoBehaviour {
         }
 
     }
-    //// Use this for initialization
-    //void Start () {
-    //       isWalking = true;		
-    //}
-
-    //// Update is called once per frame
-    //void Update () {
-    //       if(transform.position.x != destination.position.x)
-    //       {
-    //           transform.position = Vector3.MoveTowards(transform.position, destination.position, 0.1f);
-    //           if(isWalking == true)
-    //           {
-    //               animator.Play("LyteWalk");
-    //               animator.SetBool("Moving", true);
-    //               isWalking = false;
-    //           }
-    //       }
-    //       else 
-    //       {
-    //           Debug.Log("wahtt");
-    //           animator.Play("LyteIdle");
-    //           animator.SetBool("Moving", false);
-
-    //       }
-
-    //       Debug.Log(transform.position.x + " " + destination.position.x);
-    //}
 }
