@@ -14,6 +14,9 @@ public class endingLyteScript : MonoBehaviour {
     public Light orb;
     public AudioSource song;
     public AudioSource footsteps;
+    public AudioSource birdSounds;
+    public AudioSource windSounds;
+    public AudioSource themeSong;
 
     public float orbFinalRange;
     public float orbMaxRange;
@@ -60,6 +63,19 @@ public class endingLyteScript : MonoBehaviour {
             if (orb.transform.position == orbDestination.position && orbApexReached == false)
             {
                 orbApexReached = true;
+                if (windSounds.isPlaying == false)
+                {
+                    windSounds.Play();
+                }
+                if(birdSounds.isPlaying == false)
+                {
+                    birdSounds.PlayDelayed(1);
+                }
+                if(themeSong.isPlaying == false)
+                {
+                    themeSong.Play();
+                }
+
             }
 
             if (orbApexReached)
@@ -82,18 +98,17 @@ public class endingLyteScript : MonoBehaviour {
                     }
                 }else if(orb.range >= orbMaxRange && orbApexReached == false)
                 {
+                    anim.SetBool("isLookingUp", true);
+
                     orb.GetComponent<Transform>().position = Vector3.MoveTowards(orb.GetComponent<Transform>().position,
                         orbDestination.position, orbMovementSpeed);
                     
                     if(orb.transform.position.y >= songFadePoint.position.y)
                     {
                         song.volume -= songFadeSpeed;
-                    }
-                    
+                    }                 
                 }
             }
-
-            
         }
 
 
