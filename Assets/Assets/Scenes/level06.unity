@@ -1355,6 +1355,26 @@ Prefab:
       propertyPath: rightLimit
       value: 
       objectReference: {fileID: 722147845}
+    - target: {fileID: 114272451286597136, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: maxLightRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272451286597136, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: minLightRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272451286597136, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: lightRangeIncrementor
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272451286597136, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: lightRangeDecrementor
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84ecfb53db712d24fb11e78dabfa48c3, type: 2}
   m_IsPrefabParent: 0
