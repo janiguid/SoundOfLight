@@ -60,6 +60,7 @@ public class playerMovement : MonoBehaviour {
         float horizontalVelocity = Input.GetAxis("Horizontal");
         xMove = Input.GetAxis("Horizontal");
         rb2D.velocity = new Vector2(xMove * movementSpeed, rb2D.velocity.y);
+        determineDirection();
         Debug.Log("xmove is: " + xMove);
 
 
@@ -136,14 +137,14 @@ public class playerMovement : MonoBehaviour {
         //the right arrow. We multiply this value to 
         //movementSpeed to affect the direction the player
         //goes to.
-        //xMove = Input.GetAxis("Horizontal");
+        xMove = Input.GetAxis("Horizontal");
         //Debug.Log("before walk");
         //rb2D.velocity = new Vector2(xMove * movementSpeed, rb2D.velocity.y);
         Debug.Log("current x velocity" + rb2D.velocity.x);
         
 
 
-        determineDirection();
+        //determineDirection();
 
         
         if (jumpCall)

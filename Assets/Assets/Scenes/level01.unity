@@ -775,7 +775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1360834998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4971268188805556, guid: 5b030d2c238c9d8489748e61a4c9aaba, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.29
+      value: 5.15
       objectReference: {fileID: 0}
     - target: {fileID: 4971268188805556, guid: 5b030d2c238c9d8489748e61a4c9aaba, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1119,6 +1119,16 @@ Prefab:
       propertyPath: rightLimit
       value: 
       objectReference: {fileID: 358794563}
+    - target: {fileID: 82563973028381504, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 69647cf447a58b3499bc3976e60211c0, type: 3}
+    - target: {fileID: 82563973028381504, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: m_Pitch
+      value: 1.09
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84ecfb53db712d24fb11e78dabfa48c3, type: 2}
   m_IsPrefabParent: 0
