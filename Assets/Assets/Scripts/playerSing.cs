@@ -20,10 +20,10 @@ public class playerSing : playerMovement {
         anim = GetComponent<Animator>();
         orb = GameObject.FindGameObjectWithTag("Orb").GetComponent<Light>();
         song = GetComponent<AudioSource>();
-        maxLightRadius = 5;
-        minLightRadius = 3;
-        lightRangeDecrementor = .10f;
-        lightRangeIncrementor = .10f;
+        //maxLightRadius = 5;
+        //minLightRadius = 3;
+        //lightRangeDecrementor = .10f;
+        //lightRangeIncrementor = .10f;
         rb2d = GetComponent<Rigidbody2D>();
         
 	}
