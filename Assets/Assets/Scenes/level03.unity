@@ -439,6 +439,11 @@ Prefab:
       propertyPath: m_ClearFlags
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 124221572459885312, guid: 93b11af972287f14e9b984da41c58a68,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93b11af972287f14e9b984da41c58a68, type: 2}
   m_IsPrefabParent: 0
@@ -778,6 +783,21 @@ Prefab:
     - target: {fileID: 4522928420249018, guid: 84ecfb53db712d24fb11e78dabfa48c3, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 82563973028381504, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 69647cf447a58b3499bc3976e60211c0, type: 3}
+    - target: {fileID: 82563973028381504, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: m_Pitch
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 82563973028381504, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: BypassReverbZones
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84ecfb53db712d24fb11e78dabfa48c3, type: 2}

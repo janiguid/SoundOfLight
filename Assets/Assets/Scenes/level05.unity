@@ -230,6 +230,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e07b6da34753ab94198a4a28ec790232, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &464965045
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 459.31866
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 345.39084
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.742167
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370436560133590, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 359507bfc5fd2db44af16f8ec6fc21ca, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &487271390
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +845,11 @@ Prefab:
       propertyPath: m_Pitch
       value: 1.09
       objectReference: {fileID: 0}
+    - target: {fileID: 82563973028381504, guid: 84ecfb53db712d24fb11e78dabfa48c3,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 69647cf447a58b3499bc3976e60211c0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84ecfb53db712d24fb11e78dabfa48c3, type: 2}
   m_IsPrefabParent: 0
