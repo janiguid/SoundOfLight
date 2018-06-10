@@ -39,8 +39,8 @@ public class playerSing : playerMovement {
             song.Play();
         }else if (Input.GetKeyUp(KeyCode.X) || rb2d.velocity.x != 0)
         {
-            Debug.Log("stopped");
-            Debug.Log(rb2d.velocity.x);
+            //Debug.Log("stopped");
+            //Debug.Log(rb2d.velocity.x);
             anim.SetBool("isSinging", false);
             song.Stop();
         }
