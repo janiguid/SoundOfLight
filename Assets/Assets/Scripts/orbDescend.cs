@@ -31,9 +31,9 @@ public class orbDescend : MonoBehaviour {
         if(transform.position == endLoc.position && arisen != true)
         {
             anim.Play("LyteArise");
-            //audio.Stop();
+            audio.Stop();
             arisen = true;
-            //myAudio.Play();
+            myAudio.Play();
             spriteRenderer.sprite = sprite[currentIndex];
             currentIndex++;
         }
@@ -55,6 +55,7 @@ public class orbDescend : MonoBehaviour {
 
             if (timer > 6)
             {
+                myAudio.Stop();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
