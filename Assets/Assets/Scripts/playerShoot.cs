@@ -10,6 +10,11 @@ public class playerShoot : playerMovement {
     public GameObject magicOrbPlaceholder;
     public bool flying;
 
+    //these are the bounds of the ball
+    public Transform leftLimit;
+    public Transform rightLimit;
+
+
 	// Use this for initialization
 	void Start () {
         magicOrb = GameObject.FindGameObjectWithTag("Orb");
@@ -42,10 +47,14 @@ public class playerShoot : playerMovement {
 
     void ShootRight()
     {
-
+       
+        
 
         if (Input.GetKey(KeyCode.Z) && thrown == false)
         {
+            //returns if orb is going out of bounds
+            if (magicOrb.transform.position.x > rightLimit.position.x) return;
+
             magicOrb.transform.position = new Vector3(magicOrb.transform.position.x + magicOrbSpeed,
                 magicOrb.transform.position.y, magicOrb.transform.position.z);
             flying = true;
@@ -59,8 +68,13 @@ public class playerShoot : playerMovement {
 
     void ShootLeft()
     {
+
+
         if (Input.GetKey(KeyCode.Z) && thrown == false)
         {
+            //returns if orb is going out of bounds
+            if (magicOrb.transform.position.x < leftLimit.position.x) return;
+
             magicOrb.transform.position = new Vector3(magicOrb.transform.position.x - magicOrbSpeed,
                 magicOrb.transform.position.y, magicOrb.transform.position.z);
             flying = true;
