@@ -52,10 +52,12 @@ public class playerSing : playerMovement {
                 Debug.Log(rb2d.velocity.x);
                 if (orb.range <= maxLightRadius)
                     orb.range += lightRangeIncrementor;
+                if (song.isPlaying == false) song.Play();
             }
             else if (orb.range >= minLightRadius)
             {
                 orb.range -= lightRangeDecrementor;
+                if (song.isPlaying == true) song.Stop();
             }
         }
         else
@@ -63,6 +65,7 @@ public class playerSing : playerMovement {
             if (orb.range > minLightRadius)
             {
                 orb.range -= lightRangeDecrementor;
+                if (song.isPlaying == true) song.Stop();
             }
         }
     }
