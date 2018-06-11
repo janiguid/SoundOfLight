@@ -44,7 +44,7 @@ public class endingLyteScript : MonoBehaviour {
         if(orb.range >= orbFinalRange)
         {
             exitCountdown -= Time.deltaTime;
-            if(exitCountdown < 0.1)SceneManager.LoadScene(0);
+            if(exitCountdown < 0.1)SceneManager.LoadScene(2);
         }
 
 
@@ -90,7 +90,7 @@ public class endingLyteScript : MonoBehaviour {
             {
                 if (orb.range <= orbFinalRange)
                 {
-                    orbRangeIncrementor = 0.3f;
+                    orbRangeIncrementor = 0.2f;
                     orb.range += orbRangeIncrementor;
                 }
             }
